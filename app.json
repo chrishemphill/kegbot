@@ -1,0 +1,45 @@
+{
+  "name": "kegbothome",
+  "scripts": {
+  },
+  "env": {
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_S3_CUSTOM_DOMAIN": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "AWS_STORAGE_BUCKET_NAME": {
+      "required": true
+    },
+    "EMAIL_FROM_ADDRESS": {
+      "required": true
+    },
+    "KEGBOT_SETTINGS_DIR": {
+      "required": true
+    },
+    "SECRET_KEY": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "memcachier",
+    "newrelic",
+    "heroku-postgresql",
+    "postmark",
+    "redistogo"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
